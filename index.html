@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Conference 2026</title>
+    <!-- Modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logos-container">
+                <img src="images/11252.png" alt="Logo 1" class="nav-logo">
+                <img src="images/69856.png" alt="Logo 2" class="nav-logo">
+                <img src="images/8523.png" alt="Logo 3" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="loadSection('home', event)" class="nav-item active">Home</a></li>
+                <li><a href="#" onclick="loadSection('committee', event)" class="nav-item">Committee</a></li>
+                <li><a href="#" onclick="loadSection('important_dates', event)" class="nav-item">Important Dates</a></li>
+                <li><a href="#" onclick="loadSection('speakers', event)" class="nav-item">Speakers</a></li>
+                <li><a href="#" onclick="loadSection('workshop', event)" class="nav-item">Workshop</a></li>
+                <li><a href="#" onclick="loadSection('submission', event)" class="nav-item">Submission</a></li>
+                <li><a href="#" onclick="loadSection('special_session', event)" class="nav-item">Special Session</a></li>
+                <li><a href="#" onclick="loadSection('registration', event)" class="nav-item">Registration</a></li>
+                <li><a href="#" onclick="loadSection('sponsorship', event)" class="nav-item">Sponsorship</a></li>
+                <li><a href="#" onclick="loadSection('contact', event)" class="nav-item">Contact</a></li>
+            </ul>
+            <div class="auth-buttons" style="margin-left: 15px; display: flex; align-items: center;">
+                <button class="btn btn-primary" onclick="openModal('loginModal')" style="padding: 8px 16px;">Login</button>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dynamic Content Container -->
+    <main id="main-content">
+        <!-- Content gets loaded here dynamically via JS -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Academic Conference Platform. All rights reserved.</p>
+    </footer>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2 class="modal-title">User Login</h2>
+            <form>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control">
+                </div>
+                <button type="button" class="btn btn-submit">Login</button>
+            </form>
+            <p class="modal-footer">Don't have an account? <a href="#" onclick="switchModal('loginModal', 'registerModal')">Register here</a></p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content md-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2 class="modal-title">New Registration</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label>First Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group half-width">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email (Login ID)</label>
+                    <input type="email" class="form-control">
+                </div>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label>Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="form-group half-width">
+                        <label>Contact Number</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label>Gender</label>
+                        <select class="form-control">
+                            <option>Select...</option>
+                        </select>
+                    </div>
+                    <div class="form-group half-width">
+                        <label>Role</label>
+                        <select class="form-control">
+                            <option>Select...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Education Qualification</label>
+                    <input type="text" class="form-control" placeholder="e.g. B.Tech, Ph.D">
+                </div>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label>State</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group half-width">
+                        <label>City/Place</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-submit">Register</button>
+            </form>
+            <p class="modal-footer">Already have an account? <a href="#" onclick="switchModal('registerModal', 'loginModal')">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
